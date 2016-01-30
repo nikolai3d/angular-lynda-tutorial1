@@ -8,7 +8,7 @@ var app = angular.module('store' , []);
     
     var gems = [{
         name: "Dodecahedron",
-        price: 2.95, 
+        price: 2.00, 
         description: "Description of dodecahedron 10",
         canPurchase: true,
         soldOut: false,
