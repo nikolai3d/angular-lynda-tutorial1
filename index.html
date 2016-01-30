@@ -14,22 +14,45 @@
                  <em class="pull-right">{{product.price | currency}}</em>
                  <img ng-src={{product.images[0].thumb}}> <!-- use ng-src to use angular in image sources, otherwise error! -->
              </h3>
+     <section ng-init="tab = 1"> <!-- Using ng-init initializes the scoped tab value on reload -->
+       <ul class = "nav nav-pills"> <!-- Twitter bootstrap tabs class-->
+       <li> <a href ng-click="tab = 1">Description</a></li> <!-- AngularJS Directive "ng-click" -->
+       <li> <a href ng-click="tab = 2">Specification</a></li>
+       <li> <a href ng-click="tab = 3">Reviews</a></li>
+      
+      
+       </ul>
+      {{tab}}
+      <!-- Angular JS magic: we never defined tab, but clicking automatically updates the data --> 
+      <!-- When ng-click changes the value of "tab", 
+           the {{tab}} expression automatically gets updated
+           
+           Expressions define a 2-way Data Binding, which means expressions are re-evaluated 
+           when a property changes. 
+           -->
+           
+      <!-- Now, the panels (contents of the tabs) -->
+      
+      <div class="panel" ng-show="tab === 1">
+         <h4>Description</h4>
+         <p>{{product.description}}</p>
+      </div>
+      <div class="panel" ng-show="tab === 2">
+         <h4>Specification</h4>
+         <blockquote>NYI</blockquote>
+      </div>
+      <div class="panel" ng-show="tab === 3">
+         <h4>Reviews</h4>
+          <blockquote>NYI</blockquote>
+      </div>
+      
+     </section>
+             
+             
          </li>
      </ul>
      
-     <section>
-     <ul class = "nav nav-pills"> <!-- Twitter bootstrap tabs class-->
-     <li> <a href ng-click="tab = 1">Description</a></li> <!-- AngulatJS Directive "ng-click" -->
-     <li> <a href ng-click="tab = 2">Specification</a></li>
-     <li> <a href ng-click="tab = 3">Reviews</a></li>
-      
-      
-     </ul>
-      {{tab}}
-      <!-- Angular JS magic: we never defined tab, but clicking automatically updates the data --> 
-      <!-- When ng-click changes the value of "tab", the {{tab}} expression automatically gets updated -->
-      <li> <a href ng-click="tab = 1">Description</a></li
-     </section>
+
      <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
      <script type="text/javascript" src="app.js"></script>
      <p>{{"hello" + " you"}}</p>
