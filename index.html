@@ -12,7 +12,7 @@
                  <!-- Piping the output through "currency" filter -->
                  
                  <em class="pull-right">{{product.price | currency}}</em>
-                 
+                 <img ng-src={{product.images[0].thumb}}> <!-- use ng-src to use angular in image sources, otherwise error! -->
              </h3>
          </li>
      </ul>

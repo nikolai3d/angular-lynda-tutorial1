@@ -12,6 +12,17 @@ var app = angular.module('store' , []);
         description: "Description of dodecahedron 10",
         canPurchase: true,
         soldOut: false,
+        images: [
+            {
+                full: "assets/gemd1.png",
+                thumb: "assets/gemd1_thumb.png",
+            }
+            ,
+            {
+                full: "assets/gemd2.png",
+                thumb: "assets/gemd2_thumb.png",
+            }
+            ]
     },
     {
         name: "Pentahedron",
@@ -19,6 +30,17 @@ var app = angular.module('store' , []);
         description: "Description of pentahedron 5",
         canPurchase: true,
         soldOut: false,
+        images: [
+            {
+                full: "assets/p1.png",
+                thumb: "assets/p1_thumb.png",
+            }
+            ,
+            {
+                full: "assets/p2.png",
+                thumb: "assets/p2_thumb.png",
+            }
+            ]
         
     }
     
