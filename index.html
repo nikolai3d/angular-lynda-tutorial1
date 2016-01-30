@@ -16,6 +16,20 @@
              </h3>
          </li>
      </ul>
+     
+     <section>
+     <ul class = "nav nav-pills"> <!-- Twitter bootstrap tabs class-->
+     <li> <a href ng-click="tab = 1">Description</a></li> <!-- AngulatJS Directive "ng-click" -->
+     <li> <a href ng-click="tab = 2">Specification</a></li>
+     <li> <a href ng-click="tab = 3">Reviews</a></li>
+      
+      
+     </ul>
+      {{tab}}
+      <!-- Angular JS magic: we never defined tab, but clicking automatically updates the data --> 
+      <!-- When ng-click changes the value of "tab", the {{tab}} expression automatically gets updated -->
+      <li> <a href ng-click="tab = 1">Description</a></li
+     </section>
      <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
      <script type="text/javascript" src="app.js"></script>
      <p>{{"hello" + " you"}}</p>
