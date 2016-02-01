@@ -22,6 +22,18 @@ var app = angular.module('store' , []);
         name: "Dodecahedron",
         price: 2.00, 
         description: "Description of dodecahedron 10",
+        reviews: [
+            {
+                stars: 5, 
+                body: "I Love this product",
+                author: "svakhine@gmail.com"
+            },
+            {
+                stars: 1, 
+                body: "This product sucks",
+                author: "svakhine@adobe.com"
+            },
+            ],
         canPurchase: true,
         soldOut: false,
         images: [
@@ -42,6 +54,19 @@ var app = angular.module('store' , []);
         description: "Description of pentahedron 5",
         canPurchase: true,
         soldOut: false,
+        reviews: [
+            {
+                stars: 5, 
+                body: "I Love this gem",
+                author: "svakhine@gmail.com"
+            },
+            {
+                stars: 1, 
+                body: "This gem sucks",
+                author: "svakhine@adobe.com"
+            },
+            ],
+
         images: [
             {
                 full: "assets/p1.png",
