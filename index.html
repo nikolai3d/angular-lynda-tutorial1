@@ -7,12 +7,7 @@
  <body ng-controller="StoreController as store" >
      <ul class="list-group">
          <li class="list-group-item" ng-repeat="product in store.products">
-             <h3>
-                 {{product.name}}
-                 
-                 <!-- Piping the output through "currency" filter -->
-                 
-                 <em class="pull-right">{{product.price | currency}}</em>
+             <h3 ng-include="'product-title.html'">
                  <img ng-src={{product.images[0].thumb}}> <!-- use ng-src to use angular in image sources, otherwise error! -->
              </h3>
      <section ng-init="panel.selectTab(1)" ng-controller="PanelController as panel"> 
