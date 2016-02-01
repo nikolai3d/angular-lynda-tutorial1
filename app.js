@@ -34,6 +34,7 @@ var app = angular.module('store' , []);
        return {
             //A configuration object defining how your directive will work.
             restrict: 'E', //Type of directive, 'E' stands for Element
+                           // Other option is 'A' for Attribute, for Attribute Directives.
             templateUrl: 'product-title.html' //HTML template URL to load from
        }; 
     });
