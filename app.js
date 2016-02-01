@@ -17,7 +17,12 @@ var app = angular.module('store' , []);
             return this.tab === iTabIndex;
         }
         };
-    })
+    });
+    
+    app.controller("ReviewController", function(){
+        this.review = {};
+    });
+    
     var gems = [{
         name: "Dodecahedron",
         price: 2.00, 
