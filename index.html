@@ -58,7 +58,13 @@
           </blockquote>
           
       <form name="reviewForm">
-       <select>
+          <blockquote>
+           <b>Stars: {{review.stars}}</b>
+           {{review.body}}
+           <cite> by: {{review.author}}</cite>
+          </blockquote>
+       <select ng-model="review.stars">
+        <!-- ng-model binds the form element value to the property --> 
         <option value = "1">1 star</option>
         <option value = "2">2 stars</option>
         <option value = "3">3 stars</option>
@@ -66,9 +72,11 @@
         <option value = "5">5 stars</option>
         
        </select>
-       <textarea></textarea>
+       <textarea ng-model="review.body"></textarea>
+       <!-- ng-model binds the form element value to the property -->
        <label>by:</label>
-       <input type="email" name=""/>
+       <input ng-model="review.author" type="email"/>
+       <!-- ng-model binds the form element value to the property -->
        <input type="submit" value="Submit"/>
       </form>
       </div>
