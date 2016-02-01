@@ -57,7 +57,9 @@
            <cite> by: {{review.author}}</cite>
           </blockquote>
           
-      <form name="reviewForm" ng-controller="ReviewController as reviewCtrl">
+      <form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
+                              ng-submit="reviewCtrl.addReview(product)">
+       <!-- Submission just updates the local copy of the product, does not save it to server or anything -->
           <blockquote>
            <b>Stars: {{reviewCtrl.review.stars}}</b>
            {{reviewCtrl.review.body}}

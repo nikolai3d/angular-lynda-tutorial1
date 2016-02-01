@@ -21,6 +21,11 @@ var app = angular.module('store' , []);
     
     app.controller("ReviewController", function(){
         this.review = {};
+        
+        this.addReview = function(product){
+            product.reviews.push(this.review);
+            this.review = {}; //Clear out the form data to clear out the form view, after pushing the review.
+        };
     });
     
     var gems = [{
