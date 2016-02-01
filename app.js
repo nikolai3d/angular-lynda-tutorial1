@@ -28,6 +28,16 @@ var app = angular.module('store' , []);
         };
     });
     
+    app.directive('productTitle', function() {
+        //Note: dash in HTML translates into camelCase in Javascript
+        //So this is to define a custom directive <product-title>
+       return {
+            //A configuration object defining how your directive will work.
+            restrict: 'E', //Type of directive, 'E' stands for Element
+            templateUrl: 'product-title.html' //HTML template URL to load from
+       }; 
+    });
+    
     var gems = [{
         name: "Dodecahedron",
         price: 2.00, 
