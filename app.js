@@ -6,6 +6,18 @@ var app = angular.module('store' , []);
         this.products = gems;
     });
     
+    
+    app.controller("PanelController", function(){
+        this.tab = 1;
+        
+        this.selectTab = function(iNewTab){
+            this.tab = iNewTab;
+        
+        this.isSelected = function(iTabIndex){
+            return this.tab === iTabIndex;
+        }
+        };
+    })
     var gems = [{
         name: "Dodecahedron",
         price: 2.00, 
