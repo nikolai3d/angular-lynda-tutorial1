@@ -2,9 +2,41 @@
 
 var app = angular.module('store' , ['store-products']);
 
-    app.controller("StoreController", function() { 
-        this.products = gems;
-    });
+    app.controller("StoreController", ['$http', function($http) {
+    
+    //Dependency injection: we need an $http service!
+    
+           var gemsPromise = $http({method: 'GET', url: 'products.json'});
+    //Using Angular $http service to make async request to the server.
+    
+    //Other way would be:
+    //var gemsPromise = $http.get('/products.json', {apiKey: 'myApiKey'});
+    
+    //BOTH return a promise object
+    
+    //Since we told $http to fetch JSON, the result will be automatically decoded into 
+    //Javascript objects and arrays
+    
+        var store = this; //Extra variable so we can refer to store from the callback.
+    
+        store.products = []; //We need to initialize before request so page has something to show while loading.
+        
+        gemsPromise.then(function(response)
+            {
+                //SUCCESS!
+            store.products = response.data;
+            }, 
+        function(response) {
+    var data = response.data,
+        status = response.status,
+        header = response.header,
+        config = response.config;
+    // error handler
+        alert("JSON Fetch Error!");
+        });
+
+       
+    }]);
     
     
     app.controller("PanelController", function(){
@@ -20,70 +52,7 @@ var app = angular.module('store' , ['store-products']);
         };
     });
     
-
+     
     
-    var gems = [{
-        name: "Dodecahedron",
-        price: 2.00, 
-        description: "Description of dodecahedron 10",
-        reviews: [
-            {
-                stars: 5, 
-                body: "I Love this product",
-                author: "svakhine@gmail.com"
-            },
-            {
-                stars: 1, 
-                body: "This product sucks",
-                author: "svakhine@adobe.com"
-            },
-            ],
-        canPurchase: true,
-        soldOut: false,
-        images: [
-            {
-                full: "assets/gemd1.png",
-                thumb: "assets/gemd1_thumb.png",
-            }
-            ,
-            {
-                full: "assets/gemd2.png",
-                thumb: "assets/gemd2_thumb.png",
-            }
-            ]
-    },
-    {
-        name: "Pentahedron",
-        price: 5.95, 
-        description: "Description of pentahedron 5",
-        canPurchase: true,
-        soldOut: false,
-        reviews: [
-            {
-                stars: 5, 
-                body: "I Love this gem",
-                author: "svakhine@gmail.com"
-            },
-            {
-                stars: 1, 
-                body: "This gem sucks",
-                author: "svakhine@adobe.com"
-            },
-            ],
-
-        images: [
-            {
-                full: "assets/p1.png",
-                thumb: "assets/p1_thumb.png",
-            }
-            ,
-            {
-                full: "assets/p2.png",
-                thumb: "assets/p2_thumb.png",
-            }
-            ]
-        
-    }
     
-    ];
 })();
